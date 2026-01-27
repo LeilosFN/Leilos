@@ -70,6 +70,8 @@ nav ul {
     display: flex;
     gap: 30px;
     list-style: none;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
 }
 
 nav a {
@@ -78,6 +80,7 @@ nav a {
     padding: 10px 20px;
     border: 1px solid transparent;
     border-radius: 4px;
+    white-space: nowrap; /* Prevent text breaking */
 }
 
 nav a:hover, nav a.active {
@@ -116,7 +119,7 @@ nav a:hover, nav a.active {
 /* Cards (Status, News) */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Reduced min width slightly */
     gap: 30px;
     margin-top: 50px;
 }
@@ -188,6 +191,7 @@ nav a:hover, nav a.active {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    margin: 10px; /* Add margin for stacking */
 }
 
 .btn::before {
@@ -210,22 +214,20 @@ nav a:hover, nav a.active {
     width: 100%;
 }
 
-/* Access Denied */
-.access-denied-container {
+/* Access Denied / 404 */
+.access-denied-container, .page-container {
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid #ff0000;
-    box-shadow: 0 0 50px rgba(255, 0, 0, 0.2) inset;
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(0,0,0,0),
-        rgba(0,0,0,0) 10px,
-        rgba(255,0,0,0.05) 10px,
-        rgba(255,0,0,0.05) 20px
-    );
+    text-align: center;
+    padding: 20px;
+}
+
+.content-box {
+    max-width: 600px;
+    width: 100%;
 }
 
 .glitch {
@@ -242,4 +244,46 @@ nav a:hover, nav a.active {
     60% { transform: translate(2px, 2px) }
     80% { transform: translate(2px, -2px) }
     100% { transform: translate(0) }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em; /* Smaller title */
+    }
+
+    .hero p {
+        font-size: 1.1em;
+        padding: 0 10px;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
+
+    nav ul {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    nav a {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+        width: 100%; /* Full width buttons on mobile */
+        max-width: 300px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
 }
