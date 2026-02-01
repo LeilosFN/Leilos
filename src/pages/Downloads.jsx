@@ -13,7 +13,7 @@ const Downloads = () => {
           <p style={{ marginBottom: '25px' }}>¡El launcher ya está disponible! Descárgalo ahora para comenzar a jugar.</p>
           
           <div style={{ marginBottom: '30px' }}>
-              <a href="https://github.com/LeilosFN/launcher-v2/releases/latest" target="_blank" rel="noopener noreferrer" style={{ 
+              <a href="https://cdn.leilos.qzz.io/download/launcher/Leilos Launcher_1.0.9_x64_en-US.msi" target="_blank" rel="noopener noreferrer" style={{ 
                   display: 'inline-block',
                   padding: '12px 30px', 
                   fontSize: '1.2em', 
