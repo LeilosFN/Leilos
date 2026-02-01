@@ -25,6 +25,28 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
+    /* Firefox Scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--bg-dark);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 6px;
+    border: 3px solid var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-hover);
 }
 
 /* Luxury Texture Overlay */
@@ -244,6 +266,31 @@ nav a:hover, nav a.active {
     60% { transform: translate(2px, 2px) }
     80% { transform: translate(2px, -2px) }
     100% { transform: translate(0) }
+}
+
+/* Trae Badge */
+.trae-badge {
+    margin-top: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.trae-badge:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    transform: translateY(-2px);
+}
+
+.trae-badge:hover span {
+    color: #fff;
 }
 
 /* Responsive Design */

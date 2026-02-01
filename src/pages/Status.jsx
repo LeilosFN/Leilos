@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PageTransition from '../components/PageTransition';
 
 const Status = () => {
   const [statuses, setStatuses] = useState([]);
@@ -49,46 +50,48 @@ const Status = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Estado de los Servicios</h2>
-      <p style={{ color: 'var(--text-muted)', marginBottom: '40px' }}>Monitoreo en tiempo real desde CDN</p>
-      
-      {loading && <p>Cargando estados...</p>}
-      
-      {error && (
-        <div className="card" style={{ borderColor: '#ff0000' }}>
-            <h3 style={{ color: '#ff0000' }}>Error</h3>
-            <p>{error}</p>
-            <p style={{ fontSize: '0.8em', color: '#888', marginTop: '10px' }}>
-                Si estás en local, verifica que el CDN permita CORS (Access-Control-Allow-Origin: *).
-            </p>
-        </div>
-      )}
+    <PageTransition>
+      <div className="container">
+        <h2>Estado de los Servicios</h2>
+        <p style={{ color: 'var(--text-muted)', marginBottom: '40px' }}>Monitoreo en tiempo real desde CDN</p>
+        
+        {loading && <p>Cargando estados...</p>}
+        
+        {error && (
+          <div className="card" style={{ borderColor: '#ff0000' }}>
+              <h3 style={{ color: '#ff0000' }}>Error</h3>
+              <p>{error}</p>
+              <p style={{ fontSize: '0.8em', color: '#888', marginTop: '10px' }}>
+                  Si estás en local, verifica que el CDN permita CORS (Access-Control-Allow-Origin: *).
+              </p>
+          </div>
+        )}
 
-      {!loading && !error && statuses.length === 0 && (
-         <div className="card">
-            <h3>Sin Información</h3>
-            <p>No se encontraron servicios listados.</p>
-         </div>
-      )}
+        {!loading && !error && statuses.length === 0 && (
+           <div className="card">
+              <h3>Sin Información</h3>
+              <p>No se encontraron servicios listados.</p>
+           </div>
+        )}
 
-      {!loading && !error && statuses.length > 0 && (
-        <div className="card-grid">
-            {statuses.map((item, index) => (
-                <div key={index} className="card">
-                    <h3>
-                        <span 
-                            className={`status-indicator ${!item.color ? getStatusClass(item.status) : ''}`}
-                            style={item.color ? { backgroundColor: item.color, color: item.color, boxShadow: `0 0 10px ${item.color}` } : {}}
-                        ></span>
-                        {item.name || 'Servicio Desconocido'}
-                    </h3>
-                    <p>Estado: <span style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>{item.status || 'Unknown'}</span></p>
-                </div>
-            ))}
-        </div>
-      )}
-    </div>
+        {!loading && !error && statuses.length > 0 && (
+          <div className="card-grid">
+              {statuses.map((item, index) => (
+                  <div key={index} className="card">
+                      <h3>
+                          <span 
+                              className={`status-indicator ${!item.color ? getStatusClass(item.status) : ''}`}
+                              style={item.color ? { backgroundColor: item.color, color: item.color, boxShadow: `0 0 10px ${item.color}` } : {}}
+                          ></span>
+                          {item.name || 'Servicio Desconocido'}
+                      </h3>
+                      <p>Estado: <span style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>{item.status || 'Unknown'}</span></p>
+                  </div>
+              ))}
+          </div>
+        )}
+      </div>
+    </PageTransition>
   );
 };
 

@@ -1,23 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Status from './pages/Status';
-import Downloads from './pages/Downloads';
-import News from './pages/News';
-import NotFound from './pages/NotFound';
+import Footer from './components/Footer';
+import AnimatedRoutes from './components/AnimatedRoutes';
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/status" element={<Status />} />
-        <Route path="/downloads" element={<Downloads />} />
-        <Route path="/news" element={<News />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Navbar />
+        <div style={{ flex: 1 }}>
+          <AnimatedRoutes />
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 }
