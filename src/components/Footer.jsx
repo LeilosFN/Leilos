@@ -37,7 +37,7 @@ const Footer = () => {
             <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontFamily: 'var(--font-orbitron)' }}>ENLACES</h4>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <li>
-                <a href="https://github.com/LeilosFN/launcher-v2" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <a href="https://github.com/LeilosFN" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <i className="fab fa-github"></i> GitHub (Código Fuente)
                 </a>
               </li>
