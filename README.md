@@ -27,9 +27,3 @@ Es posible que algunas secciones cambien o se actualicen con frecuencia mientras
 - Mantener el código de la web oficial  
 - Facilitar contribuciones y reportes de errores  
 - Servir como referencia para la estructura y evolución del proyecto  
-
-## Contribuciones
-
-Si deseas colaborar, puedes abrir *Issues* o *Pull Requests* con sugerencias, correcciones o mejoras.
-
----
