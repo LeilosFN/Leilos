@@ -5,12 +5,12 @@ const Home = () => {
   return (
     <PageTransition>
       <div className="container hero">
-        <h1>Leilos</h1>
-        <p>Un proyecto de Fortnite usando los archivos originales.</p>
+        <h1 className="brand-script">Leilos</h1>
+        <p>A Fortnite project using original files.</p>
         
         <div style={{ marginTop: '40px' }}>
-          <a href="https://discord.gg/rNtPqQyBwg" target="_blank" rel="noopener noreferrer" className="btn" style={{ marginRight: '20px' }}>
-            <i className="fab fa-discord"></i> Unirse al Discord
+          <a href="https://mini.crisu.qzz.io/?d=LeilosDiscord" target="_blank" rel="noopener noreferrer" className="btn" style={{ marginRight: '20px' }}>
+            <i className="fab fa-discord"></i> Join Discord
           </a>
           <a href="https://github.com/LeilosFN" target="_blank" rel="noopener noreferrer" className="btn">
             <i className="fab fa-github"></i> GitHub
@@ -19,16 +19,16 @@ const Home = () => {
 
         <div className="card-grid">
           <div className="card">
-            <h3><i className="fas fa-server"></i> Servidores EU</h3>
-            <p>Alojados en Madrid, España (Por ahora). Baja latencia y alto rendimiento garantizado.</p>
+            <h3><i className="fas fa-server"></i> EU Servers</h3>
+            <p>Hosted in Madrid, Spain (for now). Low latency and high performance.</p>
           </div>
           <div className="card">
-            <h3><i className="fas fa-users"></i> Comunidad y Futuro</h3>
-            <p>Cuanta más gente se una y ayude, mejor será el producto final. ¡Más diversión para todos!</p>
+            <h3><i className="fas fa-users"></i> Community & Future</h3>
+            <p>The more people join and help, the better the final product. More fun for everyone.</p>
           </div>
           <div className="card">
-            <h3><i className="fas fa-shield-alt"></i> 100% Seguro</h3>
-            <p>Todo el contenido es seguro y verificado personalmente por nosotros. Tu seguridad es prioridad.</p>
+            <h3><i className="fas fa-shield-alt"></i> 100% Safe</h3>
+            <p>All content is safe and personally verified by us. Your security is a priority.</p>
           </div>
         </div>
       </div>

@@ -69,6 +69,7 @@ h1, h2, h3 {
     letter-spacing: 2px;
 }
 
+
 a {
     text-decoration: none;
     color: var(--text-main);
@@ -94,6 +95,14 @@ nav ul {
     list-style: none;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     justify-content: center;
+}
+
+nav ul li.brand a {
+    font-family: var(--font-orbitron);
+    color: #d4af37;
+    font-size: 1.6em;
+    padding: 0 10px;
+    text-shadow: 0 0 6px rgba(212, 175, 55, 0.25);
 }
 
 nav a {

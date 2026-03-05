@@ -7,13 +7,13 @@ const Status = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://cdn.leilos.qzz.io/json/status.json')
+    fetch('https://cdn.leilos.qzz.io/api/status.json')
       .then(response => {
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
         return response.json();
       })
       .then(data => {
-        // Soporte para nueva estructura { services: [...] } o array directo antiguo
+        // Support for new structure { services: [...] } or old direct array
         const servicesList = data.services || (Array.isArray(data) ? data : []);
 
         if (Array.isArray(servicesList)) {
@@ -21,13 +21,13 @@ const Status = () => {
         } else {
             console.error("Data format error: Expected array, got", data);
             setStatuses([]);
-            setError("Formato de datos inválido recibido del CDN.");
+            setError("Invalid data format received from CDN.");
         }
         setLoading(false);
       })
       .catch(err => {
         console.error("Error loading status:", err);
-        setError(`Error de conexión: ${err.message}. Posible bloqueo CORS o archivo no encontrado.`);
+        setError(`Connection error: ${err.message}. Possible CORS block or file not found.`);
         setStatuses([]);
         setLoading(false);
       });
@@ -52,25 +52,25 @@ const Status = () => {
   return (
     <PageTransition>
       <div className="container">
-        <h2>Estado de los Servicios</h2>
-        <p style={{ color: 'var(--text-muted)', marginBottom: '40px' }}>Monitoreo en tiempo real desde CDN</p>
+        <h2>Service Status</h2>
+        <p style={{ color: 'var(--text-muted)', marginBottom: '40px' }}>Real-time monitoring from CDN</p>
         
-        {loading && <p>Cargando estados...</p>}
+        {loading && <p>Loading statuses...</p>}
         
         {error && (
           <div className="card" style={{ borderColor: '#ff0000' }}>
               <h3 style={{ color: '#ff0000' }}>Error</h3>
               <p>{error}</p>
               <p style={{ fontSize: '0.8em', color: '#888', marginTop: '10px' }}>
-                  Si estás en local, verifica que el CDN permita CORS (Access-Control-Allow-Origin: *).
+                  If running locally, ensure the CDN allows CORS (Access-Control-Allow-Origin: *).
               </p>
           </div>
         )}
 
         {!loading && !error && statuses.length === 0 && (
            <div className="card">
-              <h3>Sin Información</h3>
-              <p>No se encontraron servicios listados.</p>
+              <h3>No Information</h3>
+              <p>No services listed.</p>
            </div>
         )}
 
@@ -83,9 +83,9 @@ const Status = () => {
                               className={`status-indicator ${!item.color ? getStatusClass(item.status) : ''}`}
                               style={item.color ? { backgroundColor: item.color, color: item.color, boxShadow: `0 0 10px ${item.color}` } : {}}
                           ></span>
-                          {item.name || 'Servicio Desconocido'}
+                          {item.name || 'Unknown Service'}
                       </h3>
-                      <p>Estado: <span style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>{item.status || 'Unknown'}</span></p>
+                      <p>Status: <span style={{ textTransform: 'uppercase', fontWeight: 'bold' }}>{item.status || 'Unknown'}</span></p>
                   </div>
               ))}
           </div>

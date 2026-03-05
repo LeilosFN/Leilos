@@ -7,7 +7,7 @@ const News = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://cdn.leilos.qzz.io/json/news.json')
+    fetch('https://cdn.leilos.qzz.io/api/news.json')
       .then(response => {
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
         return response.json();
@@ -21,13 +21,13 @@ const News = () => {
         } else {
             console.error("Data format error: Expected array or object with news key, got", data);
             setNews([]);
-            setError("Formato de datos inválido recibido del CDN.");
+            setError("Invalid data format received from CDN.");
         }
         setLoading(false);
       })
       .catch(err => {
         console.error("Error loading news:", err);
-        setError(`Error de conexión: ${err.message}. Posible bloqueo CORS.`);
+        setError(`Connection error: ${err.message}. Possible CORS block.`);
         setNews([]);
         setLoading(false);
       });
@@ -36,20 +36,20 @@ const News = () => {
   return (
     <PageTransition>
       <div className="container">
-        <h2>Noticias y Actualizaciones</h2>
-        <p style={{ color: 'var(--text-muted)', marginBottom: '40px' }}>Lo último del proyecto</p>
+        <h2>News & Updates</h2>
+        <p style={{ color: 'var(--text-muted)', marginBottom: '40px' }}>Latest from the project</p>
         
-        {loading && <p>Cargando noticias...</p>}
+        {loading && <p>Loading news...</p>}
 
         {error && (
           <div className="card" style={{ borderColor: '#ff0000', textAlign: 'left' }}>
-              <h3 style={{ color: '#ff0000' }}>Error al cargar noticias</h3>
+              <h3 style={{ color: '#ff0000' }}>Error loading news</h3>
               <p>{error}</p>
           </div>
         )}
         
         {!loading && !error && news.length === 0 && (
-           <p>No hay noticias disponibles.</p>
+           <p>No news available.</p>
         )}
 
         {!loading && !error && news.length > 0 && (
@@ -57,7 +57,7 @@ const News = () => {
               {news.map((item, index) => (
                   <div key={index} className="card" style={{ textAlign: 'left' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-                          <h3>{item.title || 'Sin Título'}</h3>
+                          <h3>{item.title || 'Untitled'}</h3>
                           <span style={{ color: 'var(--primary)', fontSize: '0.9em' }}>{item.date || ''}</span>
                       </div>
                       <p>{item.content || ''}</p>

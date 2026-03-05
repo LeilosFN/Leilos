@@ -18,15 +18,15 @@ const Footer = () => {
             <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontFamily: 'var(--font-orbitron)' }}>LEGAL</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div>
-                <strong style={{ color: '#fff' }}>Términos y Condiciones</strong>
+                <strong style={{ color: '#fff' }}>Terms & Conditions</strong>
                 <p style={{ fontSize: '0.85em', marginTop: '5px', lineHeight: '1.4' }}>
-                  Este proyecto no está afiliado, asociado, autorizado, respaldado ni relacionado oficialmente de ninguna manera con Epic Games, Inc. Somos un proyecto independiente creado por la comunidad para la comunidad.
+                  This project is not affiliated, associated, authorized, endorsed, or officially related in any way with Epic Games, Inc. We are an independent project created by the community for the community.
                 </p>
               </div>
               <div style={{ marginTop: '10px' }}>
-                <strong style={{ color: '#fff' }}>Política de Privacidad</strong>
+                <strong style={{ color: '#fff' }}>Privacy Policy</strong>
                 <p style={{ fontSize: '0.85em', marginTop: '5px', lineHeight: '1.4' }}>
-                  Tu privacidad es prioridad. No recopilamos, almacenamos ni compartimos información personal. Todo el código es transparente, vigilado y controlado para garantizar tu seguridad.
+                  Your privacy is our priority. We do not collect, store, or share personal information. All code is transparent, monitored, and controlled to ensure your security.
                 </p>
               </div>
             </div>
@@ -34,16 +34,16 @@ const Footer = () => {
 
           {/* Section 2: Links & Contact */}
           <div>
-            <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontFamily: 'var(--font-orbitron)' }}>ENLACES</h4>
+            <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontFamily: 'var(--font-orbitron)' }}>LINKS</h4>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <li>
                 <a href="https://github.com/LeilosFN" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <i className="fab fa-github"></i> GitHub (Código Fuente)
+                  <i className="fab fa-github"></i> GitHub (Source Code)
                 </a>
               </li>
               <li>
                 <a href="mailto:leilos@googlegroups.com" style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <i className="fas fa-envelope"></i> Contacto (leilos@googlegroups.com)
+                  <i className="fas fa-envelope"></i> Contact (leilos@googlegroups.com)
                 </a>
               </li>
             </ul>
@@ -51,9 +51,9 @@ const Footer = () => {
 
           {/* Section 3: Credits & Powered By */}
           <div>
-             <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontFamily: 'var(--font-orbitron)' }}>CRÉDITOS</h4>
+             <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontFamily: 'var(--font-orbitron)' }}>CREDITS</h4>
              <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                <p style={{ fontSize: '0.9em' }}>&copy; 2026 Leilos. Todos los derechos reservados.</p>
+               <p style={{ fontSize: '0.9em' }}>&copy; 2026 <span className="brand-text">Leilos</span>. All rights reserved.</p>
                 
                 {/* Trae.ai Ad */}
                 <a href="https://www.trae.ai" target="_blank" rel="noopener noreferrer" className="trae-badge">
@@ -70,7 +70,7 @@ const Footer = () => {
                         </svg>
                     </div>
                     <div>
-                        <span style={{ display: 'block', fontSize: '0.8em', color: '#888', textTransform: 'uppercase', letterSpacing: '1px' }}>Con la ayuda de</span>
+                        <span style={{ display: 'block', fontSize: '0.8em', color: '#888', textTransform: 'uppercase', letterSpacing: '1px' }}>Powered by</span>
                         <span style={{ fontWeight: 'bold', color: '#fff' }}>Trae.ai</span>
                     </div>
                 </a>
