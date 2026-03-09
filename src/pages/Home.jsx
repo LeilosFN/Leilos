@@ -6,7 +6,7 @@ const Home = () => {
     <PageTransition>
       <div className="container hero">
         <h1 className="brand-script">Leilos</h1>
-        <p>A Fortnite project using original files.</p>
+        <p>A fucking Fortnite project that isn't from Epic. :) </p>
         
         <div style={{ marginTop: '40px' }}>
           <a href="https://mini.crisu.qzz.io/?d=LeilosDiscord" target="_blank" rel="noopener noreferrer" className="btn" style={{ marginRight: '20px' }}>
