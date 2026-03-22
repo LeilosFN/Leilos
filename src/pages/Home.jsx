@@ -20,7 +20,7 @@ const Home = () => {
         <div className="card-grid">
           <div className="card">
             <h3><i className="fas fa-server"></i> EU Servers</h3>
-            <p>Hosted in Madrid, Spain (for now). Low latency and high performance.</p>
+            <p>Hosted in Madrid, Spain (for now).</p>
           </div>
           <div className="card">
             <h3><i className="fas fa-users"></i> Community & Future</h3>
